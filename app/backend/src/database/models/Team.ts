@@ -14,6 +14,7 @@ Team.init({
     autoIncrement: true,
   },
   teamName: {
+    allowNull: false,
     type: STRING,
   },
 }, {
