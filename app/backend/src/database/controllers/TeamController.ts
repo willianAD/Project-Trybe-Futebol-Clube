@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import TeamService from '../services/Team.Service';
+import TeamService from '../services/TeamService';
 
 export default class TeamController {
   private _service: TeamService;
