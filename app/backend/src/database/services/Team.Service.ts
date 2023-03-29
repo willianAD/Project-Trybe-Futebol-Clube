@@ -12,4 +12,9 @@ export default class TeamService {
     const all = await this._model.findAll();
     return all;
   }
+
+  async getById(id: string): Promise<Team | null> {
+    const result = await this._model.findByPk(id);
+    return result;
+  }
 }

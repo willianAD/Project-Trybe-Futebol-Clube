@@ -12,4 +12,15 @@ export default class TeamController {
     const teams = await this._service.getAllTeams();
     return res.status(200).json(teams);
   }
+
+  async getId(req: Request, res: Response) {
+    const { id } = req.params;
+    const teamsId = await this._service.getById(id);
+
+    if (!teamsId) {
+      return res.status(404).json({ message: 'Id not found' });
+    }
+
+    return res.status(200).json(teamsId);
+  }
 }
