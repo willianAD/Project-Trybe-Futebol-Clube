@@ -12,19 +12,19 @@ export default class LoginService {
 
   async login(email: string, password: string): Promise<string | boolean> {
     const userId = await this._model.findOne({ where: { email } });
+    const message = 'Invalid email or password';
 
     if (!userId) {
-      return false;
+      return message;
     }
 
     const decryptPassword = bcrypt.compareSync(password, userId.dataValues.password);
 
     if (!decryptPassword) {
-      return 'Invalid password';
+      return message;
     }
 
     const { _password, ...payload } = userId.dataValues;
-    console.log(payload);
     return newToken(payload);
   }
 }
