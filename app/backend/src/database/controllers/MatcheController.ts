@@ -31,4 +31,12 @@ export default class MatcheController {
 
     return res.status(200).json({ message: 'Finished' });
   }
+
+  async patchId(req: Request, res: Response) {
+    const { id } = req.params;
+    const { homeTeamGoals, awayTeamGoals } = req.body;
+    await this._service.patchById(homeTeamGoals, awayTeamGoals, Number(id));
+
+    return res.status(200).json({ message: 'Finished' });
+  }
 }

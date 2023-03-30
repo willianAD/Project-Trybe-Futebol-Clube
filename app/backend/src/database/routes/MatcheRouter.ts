@@ -11,6 +11,8 @@ const controller = new MatcheController(service);
 router.patch('/:id/finish', validateToken, (req: Request, res: Response) => controller
   .getId(req, res));
 
+router.patch('/:id', validateToken, (req: Request, res: Response) => controller.patchId(req, res));
+
 router.get('/', (req: Request, res: Response) => controller.getAll(req, res));
 
 export default router;

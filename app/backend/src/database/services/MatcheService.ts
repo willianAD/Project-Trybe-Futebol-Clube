@@ -33,4 +33,8 @@ export default class MatcheService {
   async getById(id: number) {
     await this._model.update({ inProgress: false }, { where: { id } });
   }
+
+  async patchById(homeTeamGoals: number, awayTeamGoals: number, id: number) {
+    await this._model.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
+  }
 }
