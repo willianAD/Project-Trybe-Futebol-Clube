@@ -9,7 +9,7 @@ const service = new MatcheService(Matche);
 const controller = new MatcheController(service);
 
 router.patch('/:id/finish', validateToken, (req: Request, res: Response) => controller
-  .getAll(req, res));
+  .getId(req, res));
 
 router.get('/', (req: Request, res: Response) => controller.getAll(req, res));
 

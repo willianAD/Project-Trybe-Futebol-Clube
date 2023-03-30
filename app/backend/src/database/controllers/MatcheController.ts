@@ -25,14 +25,10 @@ export default class MatcheController {
     return res.status(200).json(matches);
   }
 
-  // async getId(req: Request, res: Response) {
-  //   const { id } = req.params;
-  //   const matcheId = await this._service.getById(id);
+  async getId(req: Request, res: Response) {
+    const { id } = req.params;
+    await this._service.getById(Number(id));
 
-  //   if (!matcheId) {
-  //     return res.status(404).json({ message: 'Id not found' });
-  //   }
-
-  //   return res.status(200).json({ message: 'Finished' });
-  // }
+    return res.status(200).json({ message: 'Finished' });
+  }
 }

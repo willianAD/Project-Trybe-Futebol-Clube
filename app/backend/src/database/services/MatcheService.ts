@@ -30,7 +30,7 @@ export default class MatcheService {
     return progress;
   }
 
-  // async getById(id: string) {
-  //   await this._model.update({ inProgress: false }, { where: { id } });
-  // }
+  async getById(id: number) {
+    await this._model.update({ inProgress: false }, { where: { id } });
+  }
 }
