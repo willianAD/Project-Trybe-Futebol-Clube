@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import LoginService from '../services/LoginService';
 import { validateToken } from '../utils/token';
-// import IToken from '../interfaces/IToken';
+import IToken from '../interfaces/IToken';
 
 export default class LoginController {
   private _service: LoginService;
@@ -29,9 +29,9 @@ export default class LoginController {
   }
 
   async role(req: Request, res: Response) {
-    const token: any = req.header('Authorization');
+    const token: string = req.header('Authorization') || '';
     try {
-      const verify: any = validateToken(token);
+      const verify: IToken = validateToken(token);
       if (!verify) {
         return res.status(401).json({ message: 'Token must be a valid token' });
       }
