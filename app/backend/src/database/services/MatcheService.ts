@@ -22,16 +22,15 @@ export default class MatcheService {
     return all;
   }
 
-  // async getProgressMatches(q: string): Promise<Matche[]> {
-  //   const progress = await this._model.findAll({
-  //     where: { },
-  //     include: [{ model: Team, as: 'awayTeam' }, { model: Team, as: 'homeTeam' }],
-  //   });
-  //   return progress;
-  // }
+  async getProgressMatches(inProgress: boolean): Promise<Matche[]> {
+    const progress = await this._model.findAll({
+      where: { inProgress },
+      include: [{ model: Team, as: 'awayTeam' }, { model: Team, as: 'homeTeam' }],
+    });
+    return progress;
+  }
 
-  // async getById(id: string): Promise<Matche | null> {
-  //   const result = await this._model.findByPk(id);
-  //   return result;
+  // async getById(id: string) {
+  //   await this._model.update({ inProgress: false }, { where: { id } });
   // }
 }
