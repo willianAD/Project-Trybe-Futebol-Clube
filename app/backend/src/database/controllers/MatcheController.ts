@@ -39,4 +39,20 @@ export default class MatcheController {
 
     return res.status(200).json({ message: 'Finished' });
   }
+
+  async postId(req: Request, res: Response) {
+    const { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals } = req.body;
+    const result = await this._service.postById(
+      homeTeamId,
+      awayTeamId,
+      homeTeamGoals,
+      awayTeamGoals,
+    );
+
+    if (!result) {
+      return res.status(400).json({ message: 'Invalid ID' });
+    }
+
+    return res.status(201).json(result);
+  }
 }

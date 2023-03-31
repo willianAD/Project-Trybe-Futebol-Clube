@@ -37,4 +37,16 @@ export default class MatcheService {
   async patchById(homeTeamGoals: number, awayTeamGoals: number, id: number) {
     await this._model.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
   }
+
+  async postById(
+    homeTeamId: number,
+    awayTeamId: number,
+    homeTeamGoals: number,
+    awayTeamGoals: number,
+  ) {
+    const result = await this._model.create(
+      { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals, inProgress: true },
+    );
+    return result;
+  }
 }

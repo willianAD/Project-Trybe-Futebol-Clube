@@ -8,11 +8,13 @@ const router = Router();
 const service = new MatcheService(Matche);
 const controller = new MatcheController(service);
 
+router.get('/', (req: Request, res: Response) => controller.getAll(req, res));
+
 router.patch('/:id/finish', validateToken, (req: Request, res: Response) => controller
   .getId(req, res));
 
 router.patch('/:id', validateToken, (req: Request, res: Response) => controller.patchId(req, res));
 
-router.get('/', (req: Request, res: Response) => controller.getAll(req, res));
+router.post('/', validateToken, (req: Request, res: Response) => controller.postId(req, res));
 
 export default router;
