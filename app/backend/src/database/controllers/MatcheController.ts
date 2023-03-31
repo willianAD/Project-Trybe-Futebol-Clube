@@ -42,17 +42,22 @@ export default class MatcheController {
 
   async postId(req: Request, res: Response) {
     const { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals } = req.body;
-    const result = await this._service.postById(
-      homeTeamId,
-      awayTeamId,
-      homeTeamGoals,
-      awayTeamGoals,
-    );
 
-    if (!result) {
-      return res.status(400).json({ message: 'Invalid ID' });
+    try {
+      const findId = await this._service.getId(homeTeamId, awayTeamId);
+      if (!findId || findId.length > 1) {
+        return res.status(404).json({ message: 'There is no team with such id!' });
+      }
+
+      const result = await this._service.postById(
+        homeTeamId,
+        awayTeamId,
+        homeTeamGoals,
+        awayTeamGoals,
+      );
+      return res.status(201).json(result);
+    } catch (error) {
+      return res.status(404).json({ message: 'There is no team with such id!' });
     }
-
-    return res.status(201).json(result);
   }
 }

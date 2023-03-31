@@ -49,4 +49,9 @@ export default class MatcheService {
     );
     return result;
   }
+
+  async getId(homeTeamId: number, awayTeamId: number): Promise<Matche[]> {
+    const id = await this._model.findAll({ where: { homeTeamId, awayTeamId } });
+    return id;
+  }
 }
