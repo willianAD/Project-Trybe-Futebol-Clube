@@ -1,16 +1,20 @@
 import { Request, Response } from 'express';
-import LeaderboardSevice from '../services/LeaderboardService';
+import LeaderboardHomeSevice from '../services/LeaderboardHomeService';
 
 export default class LeaderboardController {
-  private _service: LeaderboardSevice;
+  private _service: LeaderboardHomeSevice;
 
-  constructor(service: LeaderboardSevice) {
+  constructor(service: LeaderboardHomeSevice) {
     this._service = service;
   }
 
-  async getAll(req: Request, res: Response) {
-    const leaderboard = await this._service.leaderboardHome();
-    // console.log(leaderboard);
+  // async getAll(_req: Request, res: Response) {
+  //   const leaderboard = await this._service.leaderboardHome();
+  //   return res.status(200).json(leaderboard);
+  // }
+
+  async getAllHome(_req: Request, res: Response) {
+    const leaderboard = await this._service.leaderboardFilter();
     return res.status(200).json(leaderboard);
   }
 }
