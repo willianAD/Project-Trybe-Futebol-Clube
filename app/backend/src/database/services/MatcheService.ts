@@ -10,15 +10,9 @@ export default class MatcheService {
   }
 
   async getAllMatches(): Promise<Matche[]> {
-    const all = await this._model.findAll(
-      {
-        include:
-        [
-          { model: Team, as: 'awayTeam' },
-          { model: Team, as: 'homeTeam' },
-        ],
-      },
-    );
+    const all = await this._model.findAll({ include:
+        [{ model: Team, as: 'awayTeam' }, { model: Team, as: 'homeTeam' }],
+    });
     return all;
   }
 

@@ -9,7 +9,6 @@ import { app } from '../app';
 import { Response } from 'superagent';
 import Team from '../database/models/Team';
 import { mockTeam, bestTeam, errorMessage } from './mocks/teamsMock';
-// import IErrorMsg from './interfaces/IErrorMsg';
 
 chai.use(chaiHttp);
 
