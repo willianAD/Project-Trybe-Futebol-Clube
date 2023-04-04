@@ -1,11 +1,14 @@
 import { Request, Response } from 'express';
 import LeaderboardHomeSevice from '../services/LeaderboardHomeService';
+import LeaderboardAwayService from '../services/LeaderboardAwaySevice';
 
 export default class LeaderboardController {
-  private _service: LeaderboardHomeSevice;
+  private _serviceHome: LeaderboardHomeSevice;
+  private _serviceAway: LeaderboardAwayService;
 
-  constructor(service: LeaderboardHomeSevice) {
-    this._service = service;
+  constructor(serviceHome: LeaderboardHomeSevice, serviceAway: LeaderboardAwayService) {
+    this._serviceHome = serviceHome;
+    this._serviceAway = serviceAway;
   }
 
   // async getAll(_req: Request, res: Response) {
@@ -14,7 +17,12 @@ export default class LeaderboardController {
   // }
 
   async getAllHome(_req: Request, res: Response) {
-    const leaderboard = await this._service.leaderboardFilter();
+    const leaderboard = await this._serviceHome.leaderboardFilter();
+    return res.status(200).json(leaderboard);
+  }
+
+  async getAllAway(_req: Request, res: Response) {
+    const leaderboard = await this._serviceAway.leaderboardFilter();
     return res.status(200).json(leaderboard);
   }
 }
