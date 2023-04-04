@@ -4,7 +4,7 @@ import TeamService from './TeamService';
 import Team from '../models/Team';
 import IMatchesTeamsHome from '../interfaces/IMatchesTeams';
 
-export default class LeaderboardSevice {
+export default class LeaderboardHomeSevice {
   private _service: MatcheService;
 
   constructor(service: MatcheService) {
@@ -17,17 +17,17 @@ export default class LeaderboardSevice {
 
     const result = teams.map((e) => matches.filter((m) => +e.id === +m.homeTeamId));
     return result.map((e, i) => ({ name: teams[i].teamName,
-      totalPoints: e.reduce(LeaderboardSevice.totalPoint, 0),
+      totalPoints: e.reduce(LeaderboardHomeSevice.totalPoint, 0),
       totalGames: result[i].length,
-      totalVictories: e.reduce(LeaderboardSevice.totalVictories, 0),
-      totalDraws: e.reduce(LeaderboardSevice.totalDraws, 0),
-      totalLosses: e.reduce(LeaderboardSevice.totalLosses, 0),
-      goalsFavor: e.reduce(LeaderboardSevice.goalsFavor, 0),
-      goalsOwn: e.reduce(LeaderboardSevice.goalsOwn, 0),
+      totalVictories: e.reduce(LeaderboardHomeSevice.totalVictories, 0),
+      totalDraws: e.reduce(LeaderboardHomeSevice.totalDraws, 0),
+      totalLosses: e.reduce(LeaderboardHomeSevice.totalLosses, 0),
+      goalsFavor: e.reduce(LeaderboardHomeSevice.goalsFavor, 0),
+      goalsOwn: e.reduce(LeaderboardHomeSevice.goalsOwn, 0),
       goalsBalance: (e
-        .reduce(LeaderboardSevice.goalsFavor, 0) - e.reduce(LeaderboardSevice.goalsOwn, 0)),
+        .reduce(LeaderboardHomeSevice.goalsFavor, 0) - e.reduce(LeaderboardHomeSevice.goalsOwn, 0)),
       efficiency: Number(((e
-        .reduce(LeaderboardSevice.totalPoint, 0) / (result[i].length * 3)) * 100).toFixed(2)),
+        .reduce(LeaderboardHomeSevice.totalPoint, 0) / (result[i].length * 3)) * 100).toFixed(2)),
     }));
   }
 
