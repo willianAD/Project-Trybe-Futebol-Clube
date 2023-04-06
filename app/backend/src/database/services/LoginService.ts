@@ -18,13 +18,13 @@ export default class LoginService {
       return message;
     }
 
-    const decryptPassword = bcrypt.compareSync(password, userId.dataValues.password);
+    const decryptPassword = bcrypt.compareSync(password, userId.password);
 
     if (!decryptPassword) {
       return message;
     }
 
-    const { _password, ...payload } = userId.dataValues;
-    return newToken(payload);
+    const { id, role, username } = userId;
+    return newToken({ id, role, email, username });
   }
 }

@@ -32,7 +32,7 @@ export default class LoginController {
         return res.status(401).json({ message: 'Token must be a valid token' });
       }
 
-      this._role = await verify.role;
+      this._role = verify.role;
       return res.status(200).json({ role: this._role });
     } catch (error) {
       throw new Error();

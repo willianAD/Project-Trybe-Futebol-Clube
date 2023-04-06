@@ -91,4 +91,52 @@ const matchesFalse = [
   }
 ]
 
-export { matches, matchesTrue, matchesFalse };
+const createMatch = {
+  "homeTeamId": 16,
+  "awayTeamId": 8,
+  "homeTeamGoals": 2,
+  "awayTeamGoals": 2,
+}
+
+const createResult = {
+  "id": 1,
+  "homeTeamId": 16,
+  "homeTeamGoals": 2,
+  "awayTeamId": 8,
+  "awayTeamGoals": 2,
+  "inProgress": true,
+}
+
+const createInvalid = {
+  "homeTeamId": 16,
+  "awayTeamId": 16,
+  "homeTeamGoals": 2,
+  "awayTeamGoals": 2
+}
+
+const createInvalidId = {
+  "homeTeamId": 50,
+  "awayTeamId": 8,
+  "homeTeamGoals": 2,
+  "awayTeamGoals": 2
+}
+
+const messageTeams = {
+  "message": "It is not possible to create a match with two equal teams"
+}
+
+const messageInvalid = {
+  "message": "There is no team with such id!"
+}
+
+export {
+  matches,
+  matchesTrue,
+  matchesFalse,
+  createMatch,
+  createResult,
+  createInvalid,
+  messageTeams,
+  messageInvalid,
+  createInvalidId
+};
