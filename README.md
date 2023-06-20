@@ -28,8 +28,8 @@ A construção de um CRUD com TypeScript, utilizando ORM;
 
 ## Requisitos
 
-<img src="">
-<img src="">
+<img src="https://raw.githubusercontent.com/willianAD/Project-Trybe-Futebol-Clube/main/image/Projeto%20TFC%20I.png">
+<img src="https://raw.githubusercontent.com/willianAD/Project-Trybe-Futebol-Clube/main/image/Projeto%20TFC%20II.png">
 
 
 # Requisitos Obrigatórios
