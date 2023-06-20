@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/Project-Trybe-Futebol-Clube/static/css/main.91f4a030.chunk.css",
-    "main.js": "/Project-Trybe-Futebol-Clube/static/js/main.0b7f5458.chunk.js",
-    "main.js.map": "/Project-Trybe-Futebol-Clube/static/js/main.0b7f5458.chunk.js.map",
+    "main.js": "/Project-Trybe-Futebol-Clube/static/js/main.ca507615.chunk.js",
+    "main.js.map": "/Project-Trybe-Futebol-Clube/static/js/main.ca507615.chunk.js.map",
     "runtime-main.js": "/Project-Trybe-Futebol-Clube/static/js/runtime-main.c88d7ba0.js",
     "runtime-main.js.map": "/Project-Trybe-Futebol-Clube/static/js/runtime-main.c88d7ba0.js.map",
-    "static/js/2.aaf33d27.chunk.js": "/Project-Trybe-Futebol-Clube/static/js/2.aaf33d27.chunk.js",
-    "static/js/2.aaf33d27.chunk.js.map": "/Project-Trybe-Futebol-Clube/static/js/2.aaf33d27.chunk.js.map",
+    "static/js/2.d435de5c.chunk.js": "/Project-Trybe-Futebol-Clube/static/js/2.d435de5c.chunk.js",
+    "static/js/2.d435de5c.chunk.js.map": "/Project-Trybe-Futebol-Clube/static/js/2.d435de5c.chunk.js.map",
     "index.html": "/Project-Trybe-Futebol-Clube/index.html",
     "static/css/main.91f4a030.chunk.css.map": "/Project-Trybe-Futebol-Clube/static/css/main.91f4a030.chunk.css.map",
-    "static/js/2.aaf33d27.chunk.js.LICENSE.txt": "/Project-Trybe-Futebol-Clube/static/js/2.aaf33d27.chunk.js.LICENSE.txt",
+    "static/js/2.d435de5c.chunk.js.LICENSE.txt": "/Project-Trybe-Futebol-Clube/static/js/2.d435de5c.chunk.js.LICENSE.txt",
     "static/media/negative_logo.29805c2a.png": "/Project-Trybe-Futebol-Clube/static/media/negative_logo.29805c2a.png",
     "static/media/positive_logo.4a6f1733.png": "/Project-Trybe-Futebol-Clube/static/media/positive_logo.4a6f1733.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c88d7ba0.js",
-    "static/js/2.aaf33d27.chunk.js",
+    "static/js/2.d435de5c.chunk.js",
     "static/css/main.91f4a030.chunk.css",
-    "static/js/main.0b7f5458.chunk.js"
+    "static/js/main.ca507615.chunk.js"
   ]
 }
